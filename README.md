@@ -6,3 +6,4 @@ Rustの学習記録用のリポジトリです。
 
 - 'hello_world' : Rustの環境構築とGitHubへの連携のテスト
 - 'trait_generics' : traitとgenericsの基礎
+- 'ownership' : 所有権とライフタイムの基礎
