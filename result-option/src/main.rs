@@ -41,14 +41,51 @@
 //     }
 // } 
 
-fn find_word(text: String, word: String) -> Option<usize> {
-    text.find(word.as_str())
-    // .find()は部分文字列を検索しインデックスを返す
-}
+// fn find_word(text: String, word: String) -> Option<usize> {
+//     text.find(word.as_str())
+//     // .find()は部分文字列を検索しインデックスを返す
+// }
+
+// fn main() {
+//     match find_word(String::from("Hello, world"), String::from("world")) {
+//         Some(index) => println!("'world'は{}番目にあります", index),
+//         None => println!("'world'は見つかりませんでした"),
+//    }
+// }
+
+// fn main() {
+//     let mut counter = 0;
+    // let mut increment = || { //引数なしのクロージャ
+//         counter += 1;
+//         counter
+//     };
+
+//     println!("カウント: {}", increment());
+//     println!("カウント: {}", increment());
+// }
+
+// struct Point {
+//     x: i32,
+//     y: i32,
+// }
+
+// fn main() {
+//     let point = Point { x: 10, y: 20};
+//     // moveは所有権を別の変数へ移動する
+//     let move_point = move |point: Point| println!("x = {}, y = {}", point.x, point.y);
+//     move_point(point);
+//     println!("pointは所有権がないので参照できずエラー: {}", point.x);
+// }
 
 fn main() {
-    match find_word(String::from("Hello, world"), String::from("world")) {
-        Some(index) => println!("'world'は{}番目にあります", index),
-        None => println!("'world'は見つかりませんでした"),
-    }
+    let number = vec![1, 2, 3, 4, 5];
+    // accは0から始まる
+    let sum = number.iter().fold(0, |acc, x| acc + x);
+    println!("合計: {}", sum);
+
+    let result: Vec<String> = number.iter()
+        .filter(|&&x| x > 2)
+        .map(|x| format!("値; {}",x))
+        .collect();
+    println!("{:?}", result);
 }
